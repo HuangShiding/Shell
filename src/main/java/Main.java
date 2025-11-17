@@ -14,7 +14,7 @@ public class Main {
             if("exit 0".equals(command))break;
             //内置的打印指令”echo“
             if(command.startsWith("echo")){
-                System.out.println(command.substring(4));
+                System.out.println(command.substring(4).trim());
             }
             //如果未能匹配指令，输出指令未找到
             System.out.println(command + ": command not found");
