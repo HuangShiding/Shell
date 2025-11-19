@@ -1,8 +1,16 @@
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
+        //使用HashSet存储指令集
+        Set<String> commandSet = new HashSet<>();
+        commandSet.add("echo");
+        commandSet.add("exit");
+        commandSet.add("type");
+
         while(true){
             //每次进入输入提示词”$"
             System.out.print("$ ");
@@ -35,6 +43,12 @@ public class Main {
                 }
 
                 case "echo" -> System.out.println(argsStr);
+
+                case "type" -> {
+                    if(commandSet.contains(argsStr))
+                        System.out.println(argsStr + " is a shell builtin");
+                    else System.out.println(argsStr + ": not found");
+                }
 
                 default -> System.out.println(input + ": command not found");
             }
