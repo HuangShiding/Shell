@@ -5,7 +5,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         while(true){
             //每次进入输入提示词”$"
-            System.out.println("$ ");
+            System.out.print("$ ");
             //如果输入流被关闭则正常退出，而不是报异常退出
             if(!scanner.hasNextLine())break;
             //获取输入的字符串
